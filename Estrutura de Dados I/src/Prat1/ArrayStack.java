@@ -3,37 +3,58 @@ package Prat1;
 
 public class ArrayStack implements Stack{
     
-    int posicao;
+    Object[] stack;
+    int top;
     
     public ArrayStack(){
-        this.posicao = -1;
+        stack = new Object[100];
+        this.top = 0;
     }
     
+    public ArrayStack(int e){
+      this.top= -1;
+      stack = new Object[e];
+    }
+
     public void push(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        stack[top] = o;
+        top++;
     }
 
-    @Override
     public Object top() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
+            if(this.empty()){
+                return null;
+            }
+            return this.top;
+        }
+    
     public Object pop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(this.empty()){
+            return null;
+        }
+        return this.stack[this.top--];
     }
 
-    @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.top;
     }
 
-    @Override
-    public boolean empty() {
-        if(this.top == -1){
+    public boolean empty(){
+        if(this.top == 0){
             return true;
         }
         return false;
+    }
+    
+    public boolean full(){
+        if(this.top > stack.length){
+            return true;
+        }
+        return false;
+    }
+    
+    public String toString(){
+        return "O numero que esta no topo da stack e: " + this.top;
     }
     
 }
