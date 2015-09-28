@@ -8,7 +8,7 @@ public class ArrayStack implements Stack{
     
     public ArrayStack(){
         stack = new Object[100];
-        this.top = 0;
+        this.top = -1;
     }
     
     public ArrayStack(int e){
@@ -16,9 +16,9 @@ public class ArrayStack implements Stack{
       stack = new Object[e];
     }
 
-    public void push(Object o) {
-        stack[top] = o;
+    public void push(Object o){
         top++;
+        stack[top] = o;
     }
 
     public Object top() {
