@@ -1,3 +1,5 @@
+package Prat2;
+
 
 public class ArrayStack<E> implements Stack<E> {
 

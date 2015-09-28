@@ -1,6 +1,8 @@
 
 package Prat2_old;
 
+import Prat2.ArrayStack;
+
 public class BinaryStack{
     
     public static void convert(int num){
