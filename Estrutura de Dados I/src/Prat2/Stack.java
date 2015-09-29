@@ -9,5 +9,5 @@ public interface Stack<E> {
 	public int size();
 	public boolean empty();
 	public boolean full();
-	public int ocupação();
+	public int ocupacao();
 }

@@ -31,7 +31,6 @@ public class Parque {
                 est2.push(est.pop());
             }
         }
-
     }
 
     public boolean isFull() {
