@@ -34,15 +34,14 @@ public class ArrayStack<E> implements Stack<E> {
             stack[contador - 1] = null;
             contador--;
             return a;
-        } else {
+        } 
+        else{
             return null;
         }
     }
 
     public int size() {
-
         return size;
-
     }
 
     public boolean empty() {
@@ -54,7 +53,7 @@ public class ArrayStack<E> implements Stack<E> {
 
     }
 
-    public int ocupação() {
+    public int ocupacao() {
         return contador;
     }
 }
