@@ -1,8 +1,11 @@
 package Prat2;
 
 
-public class Parque {
+public class Parque{
 
+    int contador;
+    boolean d = true;
+    
     ArrayStack<String> est;
     ArrayStack<String> est2;
 
@@ -20,9 +23,12 @@ public class Parque {
 
     public void saida(String matricula) {
 
-        boolean d = true;
-
-        while (d) {
+        /*
+        /Se o elemento do topo for igual ao da matricula
+        /Faz POP
+        /Caso contrario faz o push para a stack2
+        */
+        while (d = true) {
             if (est.top() == matricula) {
                 est.pop();
                 d = false;
@@ -34,11 +40,23 @@ public class Parque {
     }
 
     public boolean isFull() {
-        if (est.size() == 10) {
+        //if (est.size() == 10) {
+        if(contador == 10) {
             return true;
-        } else {
+        }
+        else {
             return false;
         }
     }
-
+    
+    public static void main(String[] args){
+        Parque p1 = new Parque();
+        p1.estacionar("Mercedes 1");
+        p1.estacionar("Mercedes 2");
+        p1.estacionar("Mercedes 3");
+        p1.estacionar("Mercedes 4");
+        p1.estacionar("Mercedes 5");
+        
+        p1.saida("Mercedes 3");
+    }
 }

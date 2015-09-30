@@ -1,8 +1,8 @@
-package Prat2;
+package Testes;
 
 public class ArrayStack<E> implements Stack<E> {
 
-    int size, contador;
+    int contador, size;
     E[] stack;
 
     public ArrayStack(int size) {
@@ -16,43 +16,40 @@ public class ArrayStack<E> implements Stack<E> {
             stack[contador] = o;
             contador++;
         } else {
-            System.out.println("Não pode adicionar");
+            System.out.println("A pilha encontra-se cheia.");
         }
+
     }
 
     public E top() {
         if (!empty()) {
-            return null;
-        } else {
-            return stack[contador - 1];
+            return stack[contador];
         }
+        return null;
     }
 
     public E pop() {
-
         if (!empty()) {
-            E a = stack[contador - 1];
+            E poped = stack[contador -1];
             stack[contador - 1] = null;
             contador--;
-            return a;
-        } else {
+            return poped;
+        } 
+        else{
             return null;
         }
     }
 
     public int size() {
-        return size;
+        return this.size;
     }
 
     public boolean empty() {
-        return contador == 0;
+        return this.contador == 0;
     }
 
     public boolean full() {
         return contador == size;
     }
 
-    public int ocupacao() {
-        return contador;
-    }
 }
